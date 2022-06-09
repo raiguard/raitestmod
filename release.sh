@@ -14,15 +14,16 @@ changelog=$(awk "/Version: $version$/ { flag = 1 } /^--/ { flag = 0 } flag { gsu
 git tag v$version -a -m "$changelog"
 
 # Create archive and upload it
-git archive --format=zip --prefix=raitestmod/ HEAD -o raitestmod_$version.zip
-# fmm publish raitestmod_$version.zip
+filename="raitestmod_$version.zip"
+git archive --format=zip --prefix=raitestmod/ HEAD -o $filename
+fmm upload $filename
 
 # Increment version
 newversion=$(echo "$version" | awk 'BEGIN { FS = "."; OFS = "." } { print $1, $2, $3 + 1 }')
 sed -i "s/^  \"version\":.*\$/  \"version\": \"$newversion\",/" info.json
 echo -e "---------------------------------------------------------------------------------------------------\nVersion: $newversion\nDate: ????\n  Features:\n$(cat changelog.txt)" > changelog.txt
-
 git add changelog.txt info.json
 git commit -m "Move to version $newversion"
 
+# Push changes and tag
 git push --atomic origin main v$version
