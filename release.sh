@@ -25,4 +25,4 @@ echo -e "-----------------------------------------------------------------------
 git add changelog.txt info.json
 git commit -m "Move to version $newversion"
 
-git push --atomic main v$version
+git push --atomic origin main v$version
