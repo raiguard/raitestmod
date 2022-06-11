@@ -17,6 +17,7 @@ git tag v$version -a -m "$changelog"
 filename="raitestmod_$version.zip"
 git archive --format=zip --prefix=raitestmod/ HEAD -o $filename
 fmm upload $filename
+rm $filename
 
 # Increment version
 newversion=$(echo "$version" | awk 'BEGIN { FS = "."; OFS = "." } { print $1, $2, $3 + 1 }')
