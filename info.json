@@ -4,6 +4,6 @@
   "title": "raitestmod",
   "author": "raiguard",
   "factorio_version": "1.1",
-  "dependencies": ["base >= 1.1"],
+  "dependencies": ["base>=1.1"],
   "description": "Test mod for CI and CLI dev purposes. Completely useless otherwise!"
 }
