@@ -2,8 +2,11 @@
   "name": "raitestmod",
   "version": "0.0.16",
   "title": "raitestmod",
+  "description": "Test mod for CI and CLI dev purposes. Completely useless otherwise!",
   "author": "raiguard",
   "factorio_version": "1.1",
-  "dependencies": ["base>=1.1", "flib>=0.11.0"],
-  "description": "Test mod for CI and CLI dev purposes. Completely useless otherwise!"
+  "dependencies": ["base >= 1.1", "flib >= 0.11.0"],
+  "package": {
+      "sync_portal_details": true
+  }
 }
