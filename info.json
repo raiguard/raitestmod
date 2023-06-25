@@ -5,7 +5,7 @@
   "description": "Test mod for CI and CLI dev purposes. Completely useless otherwise!",
   "author": "raiguard",
   "factorio_version": "1.1",
-  "dependencies": ["base >= 1.1.99", "flib >= 0.11.0"],
+  "dependencies": ["base >= 1.1.85", "flib >= 0.11.0"],
   "package": {
     "scripts": {
       "prepublish": "factorio-crowdin-sync"
